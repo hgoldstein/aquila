@@ -1,0 +1,6 @@
+#! /bin/bash
+
+/run &
+sleep 1
+/decktape/bin/phantomjs /decktape/decktape.js http://localhost:8000 /slides/index.pdf
+exit

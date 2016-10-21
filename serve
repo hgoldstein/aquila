@@ -1,0 +1,15 @@
+#! /bin/bash
+
+if [ $# -eq 0 ]
+  then
+    echo "Usage: serve <path to presentation>"
+    exit
+fi
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SLIDES=$(python -c 'import os,sys;print(os.path.realpath(sys.argv[1]))' $1)
+
+cd ${DIR}
+./setup
+
+docker run --privileged -p 8000:8000 -it -v ${SLIDES}:/slides/ cmr-presentation "/run"
