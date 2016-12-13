@@ -47,7 +47,7 @@ digraph tree {
         o [style=filled, shape=circle, color=greenyellow, label=""]
     }
 
-    a [shape=star, style=filled, color=orange, label=""]
+    a [shape=square, style=filled, color=orange, label=""]
     p [shape=square, style=filled, color=chocolate, label=""]
 
     a -> b
