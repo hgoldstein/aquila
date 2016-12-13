@@ -8,6 +8,7 @@ do
    n=$[$n+1]
    sleep 1
 done
-cat index.pdf
+cp /index.pdf /slides/
+cat /index.pdf
 kill %1 &>/dev/null
 exit
