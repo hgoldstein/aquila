@@ -28,7 +28,6 @@
 	        if(language === "graph") {
 						try {
 							var svg = Viz(code, options={ format:"svg", engine:"dot", scale:1 });
-							console.log(svg);
 							return svg;
 						}
 						catch(err) {
