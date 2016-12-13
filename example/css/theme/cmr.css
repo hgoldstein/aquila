@@ -1,0 +1,16 @@
+section{
+	text-align: left;
+}
+
+section.title{
+	text-align: center;
+}
+
+.reveal h1 {
+	color: #e7ad52;
+}
+
+
+.reveal h3 {
+	color: #e7ad52;
+}
