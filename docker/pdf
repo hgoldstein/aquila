@@ -1,6 +1,13 @@
 #! /bin/bash
 
-/run &
-sleep 1
-/decktape/bin/phantomjs /decktape/decktape.js http://localhost:8000 /slides/index.pdf
+/run &>/dev/null &
+n=0
+until [ $n -ge 5 ]
+do
+   /decktape/bin/phantomjs /decktape/decktape.js http://localhost:8000 /index.pdf &> /dev/null && break
+   n=$[$n+1]
+   sleep 1
+done
+cat index.pdf
+kill %1 &>/dev/null
 exit

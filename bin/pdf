@@ -12,8 +12,6 @@ SLIDES=$(python -c 'import os,sys;print(os.path.realpath(sys.argv[1]))' $1)
 cd ${DIR}
 ./setup
 
-NAME=$(python2.7 -c "import os.path; print '-'.join(os.path.relpath('${SLIDES}','${DIR}').split(os.sep)) + '-CS.pdf'")
+NAME=$(python2.7 -c "import os.path; print '-'.join(os.path.relpath('${SLIDES}','${DIR}').split(os.sep))")
 
-docker run --privileged -it -v ${SLIDES}:/slides/ cmr-presentation "/pdf"
-cd ${SLIDES}
-mv -f index.pdf ${NAME}
+docker run --privileged -it -v ${SLIDES}:/slides/ aquilia "/pdf" > "${SLIDES}/index.pdf"
