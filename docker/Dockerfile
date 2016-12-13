@@ -40,6 +40,18 @@ WORKDIR /reveal.js/plugin/markdown
 COPY markdown.patch .
 RUN patch < markdown.patch
 
+WORKDIR /reveal.js/plugin
+RUN mkdir anything
+WORKDIR anything
+RUN wget -O anything.js https://github.com/rajgoel/reveal.js-plugins/blob/545336f66d6f94214d92209721a7bd7547120b10/anything/anything.js
+
+WORKDIR /reveal.js/plugin
+RUN mkdir asciinema
+WORKDIR asciinema
+RUN wget -O asciinema-player.css https://github.com/asciinema/asciinema-player/releases/download/v2.3.1/asciinema-player.css
+RUN wget -O asciinema-player.js https://github.com/asciinema/asciinema-player/releases/download/v2.3.1/asciinema-player.js
+
+
 WORKDIR /
 RUN mkdir slides
 RUN mkdir pres
