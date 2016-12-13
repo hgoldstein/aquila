@@ -48,6 +48,9 @@ COPY markdown.patch .
 RUN patch < markdown.patch
 
 WORKDIR /
+RUN apt-get update && apt-get install python-bs4 -y
+
+WORKDIR /
 RUN mkdir slides
 RUN mkdir pres
 
