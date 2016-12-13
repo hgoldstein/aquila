@@ -29,18 +29,6 @@ WORKDIR /
 RUN cp /highlight.js/src/styles/* /reveal.js/lib/css/
 
 WORKDIR /reveal.js/plugin
-RUN git clone https://github.com/knsv/mermaid
-WORKDIR mermaid
-RUN git checkout aa6e15e3acbf29e81001909e40fb2b475285f092
-WORKDIR dist
-COPY mermaid.patch .
-RUN patch < mermaid.patch
-
-WORKDIR /reveal.js/plugin/markdown
-COPY markdown.patch .
-RUN patch < markdown.patch
-
-WORKDIR /reveal.js/plugin
 RUN mkdir anything
 WORKDIR anything
 RUN wget -O anything.js https://github.com/rajgoel/reveal.js-plugins/blob/545336f66d6f94214d92209721a7bd7547120b10/anything/anything.js
@@ -51,6 +39,13 @@ WORKDIR asciinema
 RUN wget -O asciinema-player.css https://github.com/asciinema/asciinema-player/releases/download/v2.3.1/asciinema-player.css
 RUN wget -O asciinema-player.js https://github.com/asciinema/asciinema-player/releases/download/v2.3.1/asciinema-player.js
 
+WORKDIR /reveal.js/plugin
+RUN mkdir viz
+RUN wget -O viz/viz.js https://github.com/mdaines/viz.js/releases/download/v1.4.1/viz.js
+
+WORKDIR /reveal.js/plugin/markdown
+COPY markdown.patch .
+RUN patch < markdown.patch
 
 WORKDIR /
 RUN mkdir slides
