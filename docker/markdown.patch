@@ -1,16 +1,21 @@
---- original.js	2016-09-21 08:42:52.670831499 -0400
-+++ markdown.js	2016-09-21 08:39:38.241241559 -0400
-@@ -21,14 +21,27 @@
+--- markdown.js	2016-12-13 15:43:00.131472176 -0500
++++ markdown_new.js	2016-12-13 15:30:04.393206132 -0500
+@@ -21,14 +21,32 @@
  		throw 'The reveal.js Markdown plugin requires marked to be loaded';
  	}
  
-+	var markedOptions = {};
-+
-+	if(typeof mermaid !== 'undefined' ) {
-+	    markedOptions.renderer = new marked.Renderer();
-+	    markedOptions.renderer.code = function(code, language){
-+	        if(code.match(/^sequenceDiagram/)||code.match(/^graph/)){
-+	            return '<div class="mermaid">'+code+'</div>';
++  var markedOptions = {};
++	if(typeof Viz !== 'undefined' ) {
++    markedOptions.renderer = new marked.Renderer();
++    markedOptions.renderer.code = function(code, language){
++	        if(language === "graph") {
++						try {
++							var svg = Viz(code, options={ format:"svg", engine:"dot", scale:1 });
++							return svg;
++						}
++						catch(err) {
++							return err;
++						}
 +	        } else {
 +	            return '<pre><code>'+code+'</code></pre>';
 +	        }
@@ -32,14 +37,3 @@
  	var DEFAULT_SLIDE_SEPARATOR = '^\r?\n---\r?\n$',
  		DEFAULT_NOTES_SEPARATOR = 'note:',
  		DEFAULT_ELEMENT_ATTRIBUTES_SEPARATOR = '\\\.element\\\s*?(.+?)$',
-@@ -381,6 +394,10 @@
- 					section.appendChild( notes );
- 				}
- 
-+				// Call mermaid
-+				if(typeof mermaid !== 'undefined' ) {
-+					mermaid.initialize({ cloneCssStyles: false });
-+				}
- 			}
- 
- 		}

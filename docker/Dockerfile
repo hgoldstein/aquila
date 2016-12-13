@@ -9,7 +9,7 @@ RUN apt-get update && apt-get -y install wget
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN git clone https://github.com/hakimel/reveal.js.git
 WORKDIR reveal.js
-RUN git checkout bac187f3a0f7e8f92d33ca0258fe2e96553d2930
+RUN git checkout 713702a0ab81d1756a30e6c14ae49afd42135541
 RUN npm install
 
 WORKDIR /
