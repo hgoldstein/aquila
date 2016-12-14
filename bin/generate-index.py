@@ -51,7 +51,9 @@ def generate(config, template):
     # There should only be one `slides` class; we use the first one
     # regardless of how many there are
     slides = template.find_all(class_='slides')[0]
-    slides.append(make_section(template, config['title']))
+    title = make_section(template, config['title'])
+    title['class'] = 'title'
+    slides.append(title)
     for slide in config['slides']:
         slides.append(make_section(template, slide))
     return template.prettify()
