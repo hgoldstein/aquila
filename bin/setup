@@ -1,6 +1,6 @@
 #! /bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd ${DIR}/../docker
+cd "${DIR}"/../docker || (echo "Severe error" && exit)
 
 docker build -t aquilia .

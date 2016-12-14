@@ -7,9 +7,9 @@ if [ $# -eq 0 ]
 fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-SLIDES=$(python -c 'import os,sys;print(os.path.realpath(sys.argv[1]))' $1)
+SLIDES=$(python -c 'import os,sys;print(os.path.realpath(sys.argv[1]))' "$1")
 
-cd ${DIR}
+cd "${DIR}" || (echo "Severe error" && exit)
 ./setup
 
-docker run --privileged -p 8000:8000 -p 35729 -it -v ${SLIDES}:/slides/ aquilia
+docker run --privileged -p 8000:8000 -p 35729 -it -v "${SLIDES}":/slides/ aquilia
