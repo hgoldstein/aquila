@@ -1,6 +1,9 @@
 #! /bin/bash
 
 cd / || (echo "Severe error" && exit)
+
+./generate-index.py /slides
+
 unionfs-fuse /slides:/reveal.js /pres
 
 cd /pres || (echo "Severe error" && exit)

@@ -59,3 +59,5 @@ COPY run .
 RUN chmod +x run
 COPY pdf .
 RUN chmod +x pdf
+COPY generate-index.py .
+RUN chmod +x generate-index.py .
