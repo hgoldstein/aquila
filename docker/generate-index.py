@@ -17,18 +17,13 @@ def make_section(soup, file):
 
 
 def validate(f):
-    try:
-        conf = json.load(open(f))
-        for key in ["presentation", "styles", "title", "slides"]:
-            if not (key in conf):
-                print("Could not find key {} in {}".format(key, f),
-                      file=sys.stderr)
-                return None
-        return conf
-    except json.decoder.JSONDecodeError as e:
-        print("Failed to decode JSON file {}".format(f), file=sys.stderr)
-        return None
-
+    conf = json.load(open(f))
+    for key in ["presentation", "styles", "title", "slides"]:
+        if not (key in conf):
+            print("Could not find key {} in {}".format(key, f), 
+                file=sys.stderr)
+            return None
+    return conf
 
 def generate(config, template):
     """
@@ -60,25 +55,35 @@ def generate(config, template):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("config", help="JSON file to use for generating index")
-    parser.add_argument("template", help="Base HTML template")
+    parser.add_argument("directory", 
+            help="Directory containing template and configuration.")
+    parser.add_argument(
+        '--config',
+        '-c', 
+        action='store',
+        help="JSON file to use for generating index")
+    parser.add_argument(
+        '--template'
+        '-t', 
+        action='store',
+        help="Base HTML template")
     parser.add_argument(
         '--output',
         '-o',
         action='store',
-        help="Output of index generation. By default this is STDOUT.")
+        help="Output of index generation. \
+                By default this is [directory]/index.html.")
 
     args = parser.parse_args()
 
-    config = validate(args.config)
+    config = validate(args.config or args.directory + '/config.json')
     if config is None:
         print("Invalid config, exiting...")
         sys.exit(1)
-    soup = BeautifulSoup(open(args.template), "lxml")
+    soup = BeautifulSoup(
+        open(args.template_t or args.directory + '/index.template'), 
+        'lxml')
     output = generate(config, soup)
 
-    if args.output is not None:
-        with open(args.output, 'w') as f:
-            f.write(output)
-    else:
-        print(output)
+    with open(args.output or args.directory + '/index.html', 'w') as f:
+        f.write(output)
