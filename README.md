@@ -37,6 +37,7 @@ Then, open [http://localhost:8000](http://localhost:8000) in a web browser to vi
 the presentation.
 
 The example presentation has of three sections, each in a markdown file:
+
 1. `hunter.md`
 1. `jacob.md`
 1. `math.md`
