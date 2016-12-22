@@ -5,5 +5,5 @@ cd / || (echo "Severe error" && exit)
 unionfs-fuse /slides:/reveal.js /pres
 
 cd /pres || (echo "Severe error" && exit)
-npm start || (echo "Error starting reveal.js!" && exit)
+npm start
 exit
