@@ -58,3 +58,6 @@ title bar)
 uses `css/cmr/cmr.css` to change some of the default colors and font sizes.
 * `title`: the markdown file which contains the title slide.
 * `slides`: the rest of the markdown files in the order they should be displayed.
+
+## Contributing
+Coming soon!
