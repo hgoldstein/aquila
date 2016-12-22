@@ -30,13 +30,13 @@ All commands are in the [`bin`](bin) folder.
 ## Markdown Syntax
 ### Graphs
 Embed graphs within code blocks by setting the language to `graph`:
-```markdown
-!```graph
+<pre lang="markdown"><code>```graph
 graph {
   Hello -> World;
 }
-!```
 ```
+</code></pre>
+
 
 See the Graphviz documentation for the synatax for making graphs:
 * http://www.graphviz.org/doc/info/attrs.html
