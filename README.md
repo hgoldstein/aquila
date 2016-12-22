@@ -30,7 +30,7 @@ All commands are in the [`bin`](bin) folder.
 ## Markdown Syntax
 ### Graphs
 Embed graphs within code blocks by setting the language to `graph`:
-<pre lang="markdown"><code>```graph
+<pre lang="no-highlight"><code>```graph
 graph {
   Hello -> World;
 }
