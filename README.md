@@ -27,6 +27,24 @@ specified presentation mounted. Used for debugging.
 
 All commands are in the [`bin`](bin) folder.
 
+## Markdown Syntax
+### Graphs
+Embed graphs within code blocks by setting the language to `graph`:
+````markdown
+```graph
+graph {
+  Hello -> World;
+}
+```
+````
+See the Graphviz documentation for the synatax for making graphs:
+* http://www.graphviz.org/doc/info/attrs.html
+* http://www.graphviz.org/doc/info/lang.html
+
+### Math
+Inline math is delimited by `\(..\)`. Display math is delimited by `\[..\]`
+or `$$..$$`. Uses LaTeX syntax. See [example/math.md](example/math.md)
+
 ## Example
 The [example](example) folder contains a working example presentation with Graphviz
 graphs and LaTeX equations! Run:
@@ -38,9 +56,9 @@ the presentation.
 
 The example presentation has of three sections, each in a markdown file:
 
-1. `hunter.md`
-1. `jacob.md`
+1. `graph.md`
 1. `math.md`
+1. `table.md`
 
 It also has a title in the `title.md` file. The `config.json` file describes the
 presentation's structure:
@@ -49,7 +67,7 @@ presentation's structure:
   "presentation" : "example presentation",
   "styles" : ["css/theme/cmr.css"],
   "title" : "title.md",
-  "slides" : ["hunter.md", "jacob.md", "math.md"]
+  "slides" : ["graph.md", "math.md", "table.md"]
 }
 ```
 Each field in `config.json` defines a part of the presentation:
