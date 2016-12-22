@@ -60,6 +60,10 @@ WORKDIR /reveal.js/plugin/markdown
 COPY markdown.patch .
 RUN patch < markdown.patch
 
+WORKDIR /reveal.js/plugin/math
+COPY math.patch .
+RUN patch < math.patch
+
 WORKDIR /
 RUN mkdir slides
 RUN mkdir pres

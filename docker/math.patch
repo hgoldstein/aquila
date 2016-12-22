@@ -1,0 +1,11 @@
+--- math.js	2016-12-22 16:40:38.508949795 -0500
++++ math_new.js	2016-12-22 16:40:14.318758991 -0500
+@@ -15,7 +15,7 @@
+ 		MathJax.Hub.Config({
+ 			messageStyle: 'none',
+ 			tex2jax: {
+-				inlineMath: [['$','$'],['\\(','\\)']] ,
++				inlineMath: [['\(','\)']] ,
+ 				skipTags: ['script','noscript','style','textarea','pre']
+ 			},
+ 			skipStartupTypeset: true
