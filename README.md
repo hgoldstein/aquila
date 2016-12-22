@@ -79,5 +79,8 @@ uses `css/cmr/cmr.css` to change some of the default colors and font sizes.
 * `title`: the markdown file which contains the title slide.
 * `slides`: the rest of the markdown files in the order they should be displayed.
 
+## Screencast
+<script type="text/javascript" src="https://asciinema.org/a/bcdmrv8e8xrcdjmmvxihe4p05.js" id="asciicast-bcdmrv8e8xrcdjmmvxihe4p05" async></script>
+
 ## Contributing
 Coming soon!
