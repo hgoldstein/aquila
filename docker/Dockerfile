@@ -5,6 +5,8 @@ RUN apt-get update && apt-get -y install git nodejs npm
 RUN apt-get update && apt-get -y install curl
 RUN apt-get update && apt-get -y install unionfs-fuse
 RUN apt-get update && apt-get -y install wget
+RUN apt-get update && apt-get -y install zip
+RUN apt-get update && apt-get -y install python-bs4
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN git clone https://github.com/hakimel/reveal.js.git
@@ -43,6 +45,12 @@ WORKDIR /reveal.js/plugin
 RUN mkdir viz
 RUN wget -O viz/viz.js https://github.com/mdaines/viz.js/releases/download/v1.4.1/viz.js
 
+WORKDIR /reveal.js/plugin
+RUN wget https://github.com/mathjax/MathJax/archive/2.7.0.zip
+RUN unzip *.zip
+RUN rm *.zip
+RUN mv MathJax* MathJax
+
 WORKDIR /reveal.js
 RUN npm install grunt-exec --save-dev
 COPY Gruntfile.patch .
@@ -51,9 +59,6 @@ RUN patch < Gruntfile.patch
 WORKDIR /reveal.js/plugin/markdown
 COPY markdown.patch .
 RUN patch < markdown.patch
-
-WORKDIR /
-RUN apt-get update && apt-get install python-bs4 -y
 
 WORKDIR /
 RUN mkdir slides
