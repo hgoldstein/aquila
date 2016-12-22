@@ -2,5 +2,5 @@
   "presentation" : "reveal.js",
   "styles" : ["css/theme/cmr.css"],
   "title" : "title.md",
-  "slides" : ["hunter.md"]
+  "slides" : ["hunter.md", "jacob.md"]
 }

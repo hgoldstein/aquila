@@ -2,10 +2,8 @@
 
 cd / || (echo "Severe error" && exit)
 
-./generate-index.py /slides
-
 unionfs-fuse /slides:/reveal.js /pres
 
 cd /pres || (echo "Severe error" && exit)
-npm start
+npm start || (echo "Error starting reveal.js!" && exit)
 exit

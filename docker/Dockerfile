@@ -43,6 +43,11 @@ WORKDIR /reveal.js/plugin
 RUN mkdir viz
 RUN wget -O viz/viz.js https://github.com/mdaines/viz.js/releases/download/v1.4.1/viz.js
 
+WORKDIR /reveal.js
+RUN npm install grunt-exec --save-dev
+COPY Gruntfile.patch .
+RUN patch < Gruntfile.patch
+
 WORKDIR /reveal.js/plugin/markdown
 COPY markdown.patch .
 RUN patch < markdown.patch
@@ -55,6 +60,9 @@ RUN mkdir slides
 RUN mkdir pres
 
 WORKDIR /
+COPY generate-index.py .
+RUN chmod +x generate-index.py
+COPY index.template /reveal.js
 COPY run .
 RUN chmod +x run
 COPY pdf .
