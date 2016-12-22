@@ -1,7 +1,7 @@
 # Tables
 * You can have tables too!
 * This:
-```markdown
+```no-highlight
 | \(x\) | \(x^2\) | \(x^3\) |
 |-------|---------|---------|
 | 0     | 0       | 0       |

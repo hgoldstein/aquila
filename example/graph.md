@@ -1,13 +1,12 @@
 # Graph
 * You can include Graphviz diagrams in Aqualia presentations
 * Put the `dot` graph in a code block labled with `graph`:
-````markdown
-```graph
+<pre lang="no-highlight"><code>```graph
 graph {
   Hello -> World;
 }
 ```
-````
+</code></pre>
 
 
 # Example
