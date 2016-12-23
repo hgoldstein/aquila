@@ -6,9 +6,9 @@
 if(x == 42){
   y = 42;
 }
-
 ```
 </code></pre>
+
 renders as:
 ```javascript
 if(x == 42){
