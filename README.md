@@ -20,7 +20,7 @@ Aquila provides the `aq` tool with the following commands:
   Probably the only command you'll need.
 * `aq pdf path/to/presentation`: exports the presentation as a PDF file named 
   `index.pdf` in the directory with the presentation.
-* `aq setup`: builds the docker image. `server` builds the image as needed, so 
+* `aq setup`: builds the docker image. `serve` builds the image as needed, so 
   you shouldn't have to call this manually.
 * `aq enter path/to/presentation`: launches an interactive shell in the docker 
   image with the specified presentation mounted. Used for debugging.
