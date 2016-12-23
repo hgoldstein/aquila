@@ -3,7 +3,7 @@
 @@ -21,14 +21,32 @@
  		throw 'The reveal.js Markdown plugin requires marked to be loaded';
  	}
- 
+
 +  var markedOptions = {};
 +	if(typeof Viz !== 'undefined' ) {
 +    markedOptions.renderer = new marked.Renderer();
@@ -14,10 +14,10 @@
 +							return svg;
 +						}
 +						catch(err) {
-+							return err;
++							return '<pre><code class="no-highlight">'+err+'</code></pre>';
 +						}
 +	        } else {
-+	            return '<pre><code>'+code+'</code></pre>';
++	            return '<pre><code class="'+language+'">'+code+'</code></pre>';
 +	        }
 +	    };
 +	}
@@ -31,7 +31,7 @@
 -		});
 +		}
  	}
- 
+
 +	marked.setOptions(markedOptions);
 +
  	var DEFAULT_SLIDE_SEPARATOR = '^\r?\n---\r?\n$',
