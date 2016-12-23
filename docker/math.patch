@@ -5,7 +5,7 @@
  			messageStyle: 'none',
  			tex2jax: {
 -				inlineMath: [['$','$'],['\\(','\\)']] ,
-+				inlineMath: [['\(','\)']] ,
++				inlineMath: [['\\(','\\)']] ,
  				skipTags: ['script','noscript','style','textarea','pre']
  			},
  			skipStartupTypeset: true

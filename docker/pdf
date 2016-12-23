@@ -4,7 +4,7 @@
 n=0
 until [ $n -ge 10 ]
 do
-  /decktape/bin/phantomjs /decktape/decktape.js http://localhost:8000 /index.pdf 1>&2 && break
+  /decktape/bin/phantomjs /decktape/decktape.js reveal http://localhost:8000 /index.pdf 1>&2 && break
   n=$((n+1))
   sleep 1
 done
