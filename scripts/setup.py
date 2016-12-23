@@ -5,6 +5,7 @@ import subprocess as sp
 
 DOCKER_PATH = path.join(path.dirname(path.realpath(__file__)), '..', 'docker')
 
+
 def run():
     sp.call(['docker', 'build', '-t', 'aquilia', DOCKER_PATH])
 
