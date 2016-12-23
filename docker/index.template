@@ -33,7 +33,7 @@
         history: true,
         math: {
           mathjax: 'plugin/MathJax/MathJax.js',
-          config: 'TeX-AMS_HTML-full'
+          config: 'TeX-AMS_SVG'
         },
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
