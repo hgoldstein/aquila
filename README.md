@@ -46,6 +46,12 @@ See the Graphviz documentation for the synatax for making graphs:
 Inline math is delimited by `\(..\)`. Display math is delimited by `\[..\]`
 or `$$..$$`. Uses LaTeX syntax. See [example/math.md](example/math.md)
 
+### Asciinema
+Embed asciinema players with:
+```html
+<asciinema-player src="img/aquila-serve-demo.json" cols="80" rows="24" font-size="14px"></asciinema-player>
+```
+
 ## Example
 The [example](example) folder contains a working example presentation with Graphviz
 graphs and LaTeX equations! Run:
