@@ -1,0 +1,726 @@
+{
+  "title": null,
+  "command": null,
+  "env": {
+    "SHELL": "/usr/bin/zsh",
+    "TERM": "xterm-256color"
+  },
+  "width": 80,
+  "duration": 30.025052,
+  "height": 24,
+  "version": 1,
+  "stdout": [
+    [
+      0.184838,
+      "\u001b]0;hunter@ss-arch: ~\u0007"
+    ],
+    [
+      0.003761,
+      "\u001b]0;~\u0007"
+    ],
+    [
+      0.004545,
+      "\r\n\u001b[34m~\u001b[39m\u001b[38;5;242m\u001b[39m\u001b[36m\u001b[39m\u001b[33m\u001b[39m\r\n"
+    ],
+    [
+      0.002147,
+      "\u001b]777;notify;Command completed;asciinema rec\u0007\u001b]7;file:///home/hunter\u0007"
+    ],
+    [
+      8e-05,
+      "\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[35m»\u001b[39m \u001b[K\u001b[?2004h"
+    ],
+    [
+      1.080695,
+      "\u001b[4mc\u001b[24m"
+    ],
+    [
+      0.12383,
+      "\b\u001b[24m\u001b[32mc\u001b[32md\u001b[39m"
+    ],
+    [
+      0.471106,
+      " "
+    ],
+    [
+      0.199386,
+      "\u001b[4mD\u001b[24m"
+    ],
+    [
+      0.204875,
+      "\b\u001b[4mD\u001b[4mo\u001b[24m"
+    ],
+    [
+      0.152657,
+      "\b\u001b[4mo\u001b[4mc\u001b[24m"
+    ],
+    [
+      0.113329,
+      "\b\u001b[4mc\u001b[4mu\u001b[24m"
+    ],
+    [
+      0.194562,
+      "\b\u001b[4mu\u001b[4mm\u001b[24m"
+    ],
+    [
+      0.124923,
+      "\b\u001b[4mm\u001b[4me\u001b[24m"
+    ],
+    [
+      0.020724,
+      "\b\u001b[4me\u001b[4mn\u001b[24m"
+    ],
+    [
+      0.116308,
+      "\b\u001b[4mn\u001b[4mt\u001b[24m"
+    ],
+    [
+      0.149473,
+      "\b\u001b[4mt\u001b[4ms\u001b[24m"
+    ],
+    [
+      0.112147,
+      "\b\u001b[4ms\u001b[4m/\u001b[24m"
+    ],
+    [
+      0.283417,
+      "\b\u001b[4m/\u001b[4ma\u001b[24m"
+    ],
+    [
+      0.437942,
+      "\b\u001b[4ma\u001b[4mq\u001b[24m"
+    ],
+    [
+      0.112048,
+      "\b\u001b[4mq\u001b[4mu\u001b[24m"
+    ],
+    [
+      0.481772,
+      "\b\u001b[4mu\u001b[4mi\u001b[24m"
+    ],
+    [
+      0.270935,
+      "\b\u001b[4mi\u001b[4ml\u001b[24m"
+    ],
+    [
+      0.019625,
+      "\b\u001b[4ml\u001b[4ma\u001b[24m"
+    ],
+    [
+      0.174005,
+      "\b\u001b[4ma\u001b[1m\u001b[4m/\u001b[0m\u001b[24m"
+    ],
+    [
+      0.983189,
+      "\b\b\u001b[4ma\u001b[24m\u001b[0m\u001b[24m \b"
+    ],
+    [
+      0.000799,
+      "\u001b[?2004l\r\r\n"
+    ],
+    [
+      0.000179,
+      "\u001b]0;hunter: cd Documents/aquila\u0007"
+    ],
+    [
+      5.5e-05,
+      "\u001b]0;hunter@ss-arch: ~/Documents/aquila\u0007"
+    ],
+    [
+      0.003061,
+      "\u001b]0;~/Documents/aquila\u0007"
+    ],
+    [
+      0.008693,
+      "\r\n\u001b[34m~/Documents/aquila\u001b[39m\u001b[38;5;242m master\u001b[39m\u001b[36m\u001b[39m\u001b[33m\u001b[39m\r\n"
+    ],
+    [
+      0.003457,
+      "\u001b]777;notify;Command completed;cd Documents/aquila\u0007\u001b]7;file:///home/hunter/Documents/aquila\u0007"
+    ],
+    [
+      2.7e-05,
+      "\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[35m»\u001b[39m \u001b[K\u001b[?2004h"
+    ],
+    [
+      1.379986,
+      "\u001b[1m\u001b[31mt\u001b[0m\u001b[39m"
+    ],
+    [
+      0.054631,
+      "\b\u001b[0m\u001b[32mt\u001b[32mr\u001b[39m"
+    ],
+    [
+      0.293152,
+      "\b\b\u001b[1m\u001b[31mt\u001b[1m\u001b[31mr\u001b[1m\u001b[31me\u001b[0m\u001b[39m"
+    ],
+    [
+      0.169032,
+      "\b\b\b\u001b[0m\u001b[32mt\u001b[0m\u001b[32mr\u001b[0m\u001b[32me\u001b[32me\u001b[39m"
+    ],
+    [
+      1.784178,
+      " "
+    ],
+    [
+      0.135225,
+      "\u001b[4me\u001b[24m"
+    ],
+    [
+      0.32694,
+      "\b\u001b[4me\u001b[4mx\u001b[24m"
+    ],
+    [
+      0.124741,
+      "\b\u001b[4mx\u001b[4ma\u001b[24m"
+    ],
+    [
+      0.209516,
+      "\b\u001b[4ma\u001b[4mmple\u001b[1m\u001b[4m/\u001b[0m\u001b[24m"
+    ],
+    [
+      1.18254,
+      "\b\b\u001b[4me\u001b[24m\u001b[0m\u001b[24m \b"
+    ],
+    [
+      0.000889,
+      "\u001b[?2004l\r\r\n"
+    ],
+    [
+      0.000144,
+      "\u001b]0;aquila: tree example\u0007"
+    ],
+    [
+      0.004466,
+      "example\r\n├── config.json\r\n├── css\r\n│   └── theme\r\n│       └── cmr.css\r\n├── graph.md\r\n├── math.md\r\n"
+    ],
+    [
+      2.4e-05,
+      "├── table.md\r\n└── title.md\r\n\r\n2 directories, 6 files\r\n"
+    ],
+    [
+      9.9e-05,
+      "\u001b]0;hunter@ss-arch: ~/Documents/aquila\u0007"
+    ],
+    [
+      0.003352,
+      "\u001b]0;~/Documents/aquila\u0007"
+    ],
+    [
+      0.00792,
+      "\r\n\u001b[34m~/Documents/aquila\u001b[39m\u001b[38;5;242m master\u001b[39m\u001b[36m\u001b[39m\u001b[33m\u001b[39m\r\n"
+    ],
+    [
+      0.003278,
+      "\u001b]777;notify;Command completed;tree example\u0007\u001b]7;file:///home/hunter/Documents/aquila\u0007"
+    ],
+    [
+      2.9e-05,
+      "\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[35m»\u001b[39m \u001b[K\u001b[?2004h"
+    ],
+    [
+      5.985735,
+      "\u001b[4mb\u001b[24m"
+    ],
+    [
+      0.187877,
+      "\b\u001b[4mb\u001b[4mi\u001b[24m"
+    ],
+    [
+      0.017464,
+      "\b\b\u001b[4mb\u001b[4mi\u001b[4mn\u001b[24m"
+    ],
+    [
+      0.298459,
+      "\b\u001b[4mn\u001b[4m/\u001b[24m"
+    ],
+    [
+      0.208484,
+      "\b\u001b[4m/\u001b[4ms\u001b[24m"
+    ],
+    [
+      0.135903,
+      "\b\u001b[4ms\u001b[4me\u001b[24m"
+    ],
+    [
+      0.069654,
+      "\b\u001b[4me\u001b[4mr\u001b[24m"
+    ],
+    [
+      0.21016,
+      "\b\b\b\b\b\b\b\u001b[24m\u001b[32mb\u001b[24m\u001b[32mi\u001b[24m\u001b[32mn\u001b[24m\u001b[32m/\u001b[24m\u001b[32ms\u001b[24m\u001b[32me\u001b[24m\u001b[32mr\u001b[32mve\u001b[39m\u001b[1m \u001b[0m"
+    ],
+    [
+      1.36846,
+      "\b\u001b[0m \u001b[4me\u001b[24m"
+    ],
+    [
+      0.193251,
+      "\b\u001b[4me\u001b[4mx\u001b[24m"
+    ],
+    [
+      0.125589,
+      "\b\u001b[4mx\u001b[4ma\u001b[24m"
+    ],
+    [
+      0.080855,
+      "\b\u001b[4ma\u001b[4mm\u001b[24m"
+    ],
+    [
+      0.192342,
+      "\b\u001b[4mm\u001b[4mp\u001b[24m"
+    ],
+    [
+      0.049755,
+      "\b\u001b[4mp\u001b[4ml\u001b[24m"
+    ],
+    [
+      0.017423,
+      "\b\u001b[4ml\u001b[4me\u001b[24m"
+    ],
+    [
+      0.215461,
+      "\b\u001b[4me\u001b[1m\u001b[4m/\u001b[0m\u001b[24m"
+    ],
+    [
+      0.650358,
+      "\b\b\u001b[4me\u001b[24m\u001b[0m\u001b[24m \b"
+    ],
+    [
+      0.000876,
+      "\u001b[?2004l\r\r\n"
+    ],
+    [
+      0.000131,
+      "\u001b]0;aquila: bin/serve example\u0007"
+    ],
+    [
+      0.030827,
+      "Sending build context to Docker daemon 17.41 kB\r\r\r\n"
+    ],
+    [
+      0.070733,
+      "Step 1 : FROM ubuntu:14.04\r\n"
+    ],
+    [
+      0.000118,
+      " ---> 4d44acee901c\r\nStep 2 : EXPOSE 8000\r\n"
+    ],
+    [
+      0.000384,
+      " ---> Using cache\r\n ---> 111587d29f8a\r\n"
+    ],
+    [
+      1.1e-05,
+      "Step 3 : RUN apt-get update && apt-get -y install git nodejs npm\r\n"
+    ],
+    [
+      0.000216,
+      " ---> Using cache\r\n ---> 2e52e23778c5\r\nStep 4 : RUN apt-get update && apt-get -y install curl\r\n"
+    ],
+    [
+      0.000221,
+      " ---> Using cache\r\n ---> 2e38ef96e7f0\r\nStep 5 : RUN apt-get update && apt-get -y install unionfs-fuse\r\n"
+    ],
+    [
+      0.0002,
+      " ---> Using cache\r\n ---> dea90a169aae\r\n"
+    ],
+    [
+      1.3e-05,
+      "Step 6 : RUN apt-get update && apt-get -y install wget\r\n"
+    ],
+    [
+      0.00021,
+      " ---> Using cache\r\n ---> b51293b3ab9e\r\n"
+    ],
+    [
+      1e-05,
+      "Step 7 : RUN apt-get update && apt-get -y install zip\r\n"
+    ],
+    [
+      0.000423,
+      " ---> Using cache\r\n ---> c45c45fc27c9\r\nStep 8 : RUN apt-get update && apt-get -y install python-bs4\r\n"
+    ],
+    [
+      0.000238,
+      " ---> Using cache\r\n ---> e71b4bfa5268\r\nStep 9 : RUN ln -s /usr/bin/nodejs /usr/bin/node\r\n"
+    ],
+    [
+      0.000232,
+      " ---> Using cache\r\n ---> 64bed7d45e31\r\n"
+    ],
+    [
+      1.1e-05,
+      "Step 10 : RUN git clone https://github.com/hakimel/reveal.js.git\r\n"
+    ],
+    [
+      0.000273,
+      " ---> Using cache\r\n ---> e9d2e7b784aa\r\n"
+    ],
+    [
+      1e-05,
+      "Step 11 : WORKDIR reveal.js\r\n"
+    ],
+    [
+      0.000241,
+      " ---> Using cache\r\n ---> 1b56da552f88\r\nStep 12 : RUN git checkout 713702a0ab81d1756a30e6c14ae49afd42135541\r\n"
+    ],
+    [
+      0.000258,
+      " ---> Using cache\r\n ---> a1267cb87011\r\nStep 13 : RUN npm install\r\n"
+    ],
+    [
+      0.000259,
+      " ---> Using cache\r\n ---> 2fab2607ccff\r\nStep 14 : WORKDIR /\r\n"
+    ],
+    [
+      0.00029,
+      " ---> Using cache\r\n ---> 39af7943f345\r\nStep 15 : RUN git clone https://github.com/astefanutti/decktape.git\r\n"
+    ],
+    [
+      0.000291,
+      " ---> Using cache\r\n ---> 4c0852467083\r\n"
+    ],
+    [
+      1.4e-05,
+      "Step 16 : WORKDIR decktape\r\n"
+    ],
+    [
+      0.000264,
+      " ---> Using cache\r\n ---> 1bb944bb6af4\r\n"
+    ],
+    [
+      1.3e-05,
+      "Step 17 : RUN git checkout 42310835e3523093b80ced40914e992d55b692a4\r\n"
+    ],
+    [
+      0.000292,
+      " ---> Using cache\r\n ---> bf816efeedf5\r\nStep 18 : RUN mkdir -p bin\r\n"
+    ],
+    [
+      0.000317,
+      " ---> Using cache\r\n ---> 0b5d643176d0\r\nStep 19 : RUN wget -O bin/phantomjs http://astefanutti.github.io/decktape/downloads/phantomjs-linux-ubuntu16-x86-64\r\n"
+    ],
+    [
+      0.000314,
+      " ---> Using cache\r\n ---> 34be2f97e20c\r\nStep 20 : RUN chmod +x bin/phantomjs\r\n"
+    ],
+    [
+      0.000289,
+      " ---> Using cache\r\n ---> 9a8433e781f3\r\nStep 21 : RUN apt-get update && apt-get -y install fontconfig libicu52\r\n"
+    ],
+    [
+      0.000311,
+      " ---> Using cache\r\n ---> 9fb634522bf4\r\nStep 22 : WORKDIR /\r\n"
+    ],
+    [
+      0.000335,
+      " ---> Using cache\r\n ---> c2e03ce357f0\r\nStep 23 : RUN git clone https://github.com/isagalaev/highlight.js.git\r\n"
+    ],
+    [
+      0.000306,
+      " ---> Using cache\r\n ---> 4a7ffe2df594\r\nStep 24 : WORKDIR /highlight.js\r\n"
+    ],
+    [
+      0.000341,
+      " ---> Using cache\r\n ---> f3146bb1cc62\r\nStep 25 : RUN git checkout bb1cdfe052cd6c98e0d1d61f16dff9f1d2d57ffc\r\n"
+    ],
+    [
+      0.000337,
+      " ---> Using cache\r\n ---> e2b9a12a8cf6\r\nStep 26 : WORKDIR /\r\n"
+    ],
+    [
+      0.000363,
+      " ---> Using cache\r\n ---> a087a015380a\r\nStep 27 : RUN cp /highlight.js/src/styles/* /reveal.js/lib/css/\r\n"
+    ],
+    [
+      0.000324,
+      " ---> Using cache\r\n ---> a98c49738023\r\n"
+    ],
+    [
+      1.1e-05,
+      "Step 28 : WORKDIR /reveal.js/plugin\r\n"
+    ],
+    [
+      0.000357,
+      " ---> Using cache\r\n ---> 20bc5a94d3f4\r\nStep 29 : RUN mkdir anything\r\n"
+    ],
+    [
+      0.000366,
+      " ---> Using cache\r\n ---> e3b5916dfbd5\r\nStep 30 : WORKDIR anything\r\n"
+    ],
+    [
+      0.0004,
+      " ---> Using cache\r\n ---> 4d61a993415a\r\nStep 31 : RUN wget -O anything.js https://github.com/rajgoel/reveal.js-plugins/blob/545336f66d6f94214d92209721a7bd7547120b10/anything/anything.js\r\n"
+    ],
+    [
+      0.000329,
+      " ---> Using cache\r\n ---> 87517175e032\r\nStep 32 : WORKDIR /reveal.js/plugin\r\n"
+    ],
+    [
+      0.000324,
+      " ---> Using cache\r\n ---> 0fc672bfd9ed\r\nStep 33 : RUN mkdir asciinema\r\n"
+    ],
+    [
+      0.000305,
+      " ---> Using cache\r\n ---> 65e6e5f081aa\r\nStep 34 : WORKDIR asciinema\r\n"
+    ],
+    [
+      0.000327,
+      " ---> Using cache\r\n ---> c0fe2352f6a5\r\n"
+    ],
+    [
+      8e-06,
+      "Step 35 : RUN wget -O asciinema-player.css https://github.com/asciinema/asciinema-player/releases/download/v2.3.1/asciinema-player.css\r\n"
+    ],
+    [
+      0.000325,
+      " ---> Using cache\r\n ---> d6897fa8a80a\r\n"
+    ],
+    [
+      1e-05,
+      "Step 36 : RUN wget -O asciinema-player.js https://github.com/asciinema/asciinema-player/releases/download/v2.3.1/asciinema-player.js\r\n"
+    ],
+    [
+      0.000335,
+      " ---> Using cache\r\n ---> 9db2a53087ed\r\nStep 37 : WORKDIR /reveal.js/plugin\r\n"
+    ],
+    [
+      0.000317,
+      " ---> Using cache\r\n ---> 651d1bc8e85a\r\nStep 38 : RUN mkdir viz\r\n"
+    ],
+    [
+      0.000299,
+      " ---> Using cache\r\n ---> 32f75cbf1751\r\n"
+    ],
+    [
+      1e-05,
+      "Step 39 : RUN wget -O viz/viz.js https://github.com/mdaines/viz.js/releases/download/v1.4.1/viz.js\r\n"
+    ],
+    [
+      0.000314,
+      " ---> Using cache\r\n ---> 71157901183e\r\n"
+    ],
+    [
+      9e-06,
+      "Step 40 : WORKDIR /reveal.js/plugin\r\n"
+    ],
+    [
+      0.000332,
+      " ---> Using cache\r\n ---> ac378dbed948\r\n"
+    ],
+    [
+      9e-06,
+      "Step 41 : RUN wget https://github.com/mathjax/MathJax/archive/2.7.0.zip\r\n"
+    ],
+    [
+      0.000349,
+      " ---> Using cache\r\n ---> 88fa6cd71d02\r\n"
+    ],
+    [
+      1.1e-05,
+      "Step 42 : RUN unzip *.zip\r\n"
+    ],
+    [
+      0.000347,
+      " ---> Using cache\r\n ---> c3ab3f233173\r\nStep 43 : RUN rm *.zip\r\n"
+    ],
+    [
+      0.000362,
+      " ---> Using cache\r\n ---> 126750513eda\r\nStep 44 : RUN mv MathJax* MathJax\r\n"
+    ],
+    [
+      0.000355,
+      " ---> Using cache\r\n ---> e57e9355b4d4\r\n"
+    ],
+    [
+      1.1e-05,
+      "Step 45 : WORKDIR /reveal.js\r\n"
+    ],
+    [
+      0.000373,
+      " ---> Using cache\r\n ---> c500a34021f9\r\nStep 46 : RUN npm install grunt-exec --save-dev\r\n"
+    ],
+    [
+      0.00039,
+      " ---> Using cache\r\n ---> f70c5792c4b5\r\nStep 47 : COPY Gruntfile.patch .\r\n"
+    ],
+    [
+      0.000403,
+      " ---> Using cache\r\n ---> c09a028b38f6\r\nStep 48 : RUN patch < Gruntfile.patch\r\n"
+    ],
+    [
+      0.000368,
+      " ---> Using cache\r\n ---> a842790d8baa\r\nStep 49 : WORKDIR /reveal.js/plugin/markdown\r\n"
+    ],
+    [
+      0.000395,
+      " ---> Using cache\r\n ---> 1e1cce712524\r\nStep 50 : COPY markdown.patch .\r\n"
+    ],
+    [
+      0.000437,
+      " ---> Using cache\r\n ---> 85c5fe5a0c00\r\nStep 51 : RUN patch < markdown.patch\r\n"
+    ],
+    [
+      0.000398,
+      " ---> Using cache\r\n ---> d0622e253d39\r\nStep 52 : WORKDIR /reveal.js/plugin/math\r\n"
+    ],
+    [
+      0.000396,
+      " ---> Using cache\r\n ---> 4bda6b755d41\r\nStep 53 : COPY math.patch .\r\n"
+    ],
+    [
+      0.000415,
+      " ---> Using cache\r\n ---> d0c3c58ab4f1\r\nStep 54 : RUN patch < math.patch\r\n"
+    ],
+    [
+      0.000412,
+      " ---> Using cache\r\n ---> 330e51c090d3\r\nStep 55 : WORKDIR /\r\n"
+    ],
+    [
+      0.000535,
+      " ---> Using cache\r\n ---> 678c3c5d85ca\r\nStep 56 : RUN mkdir slides\r\n"
+    ],
+    [
+      0.000498,
+      " ---> Using cache\r\n ---> 11fb8fecd6d8\r\nStep 57 : RUN mkdir pres\r\n"
+    ],
+    [
+      0.000397,
+      " ---> Using cache\r\n ---> 887b97b745a4\r\n"
+    ],
+    [
+      1e-05,
+      "Step 58 : WORKDIR /\r\n"
+    ],
+    [
+      0.000441,
+      " ---> Using cache\r\n ---> 5e7ebf55053e\r\nStep 59 : COPY generate-index.py .\r\n"
+    ],
+    [
+      0.000442,
+      " ---> Using cache\r\n ---> 0d6530519539\r\nStep 60 : RUN chmod +x generate-index.py\r\n"
+    ],
+    [
+      0.000448,
+      " ---> Using cache\r\n ---> c6a0adab04ca\r\nStep 61 : COPY index.template /reveal.js\r\n"
+    ],
+    [
+      0.000449,
+      " ---> Using cache\r\n ---> c01ee29b5bb0\r\nStep 62 : COPY run .\r\n"
+    ],
+    [
+      0.000461,
+      " ---> Using cache\r\n ---> a79851bcd6d5\r\n"
+    ],
+    [
+      1e-05,
+      "Step 63 : RUN chmod +x run\r\n"
+    ],
+    [
+      0.000458,
+      " ---> Using cache\r\n ---> 52075c6b1802\r\n"
+    ],
+    [
+      1e-05,
+      "Step 64 : COPY pdf .\r\n"
+    ],
+    [
+      0.000456,
+      " ---> Using cache\r\n ---> 7c3592e25674\r\n"
+    ],
+    [
+      9e-06,
+      "Step 65 : RUN chmod +x pdf\r\n"
+    ],
+    [
+      0.000487,
+      " ---> Using cache\r\n ---> 2f555cd475c9\r\n"
+    ],
+    [
+      9e-06,
+      "Step 66 : COPY generate-index.py .\r\n"
+    ],
+    [
+      0.00049,
+      " ---> Using cache\r\n ---> afaf03f66c43\r\nStep 67 : RUN chmod +x generate-index.py .\r\n"
+    ],
+    [
+      0.000461,
+      " ---> Using cache\r\n ---> 24e85811c0a4\r\n"
+    ],
+    [
+      0.007518,
+      "Successfully built 24e85811c0a4\r\n"
+    ],
+    [
+      0.564517,
+      "\r\n> reveal.js@3.3.0 start /pres\r\n> grunt serve\r\n\r\n"
+    ],
+    [
+      0.885433,
+      "\u001b[4mRunning \"connect:server\" (connect) task\u001b[24m\r\n"
+    ],
+    [
+      0.00584,
+      "Started connect web server on http://localhost:8000\r\n"
+    ],
+    [
+      0.005139,
+      "\r\n\u001b[4mRunning \"watch\" task\u001b[24m\r\n"
+    ],
+    [
+      0.000384,
+      "Waiting...\r\n"
+    ],
+    [
+      1.129081,
+      "\u001b[4mRunning \"exec:genindex\" (exec) task\u001b[24m\r\n"
+    ],
+    [
+      0.059994,
+      "\r\n\u001b[32mDone, without errors.\u001b[39m\r\n"
+    ],
+    [
+      0.004018,
+      "\u001b[36mCompleted in 0.938s at Thu Dec 22 2016 23:10:20 GMT+0000 (UTC)\u001b[39m - Waiting...\r\n"
+    ],
+    [
+      1.262877,
+      "\u001b[32m>> \u001b[39mFile \"index.html\" changed.\r\n"
+    ],
+    [
+      0.000233,
+      "\u001b[36mCompleted in 0.000s at Thu Dec 22 2016 23:10:21 GMT+0000 (UTC)\u001b[39m - Waiting...\r\n"
+    ],
+    [
+      3.242327,
+      "^C"
+    ],
+    [
+      0.303345,
+      "\u001b]0;hunter@ss-arch: ~/Documents/aquila\u0007"
+    ],
+    [
+      0.00369,
+      "\u001b]0;~/Documents/aquila\u0007"
+    ],
+    [
+      0.007509,
+      "\r\n\u001b[34m~/Documents/aquila\u001b[39m\u001b[38;5;242m master\u001b[39m\u001b[36m\u001b[39m\u001b[33m 8s\u001b[39m\r\n"
+    ],
+    [
+      0.002848,
+      "\u001b]777;notify;Command completed;bin/serve example\u0007\u001b]7;file:///home/hunter/Documents/aquila\u0007"
+    ],
+    [
+      2.5e-05,
+      "\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[31m»\u001b[39m \u001b[K\u001b[?2004h"
+    ],
+    [
+      0.68643,
+      "\u001b[?2004l\r\r\n"
+    ]
+  ]
+}
