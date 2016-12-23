@@ -1,9 +1,16 @@
 #! /usr/bin/env python3
 
-from argparse import ArgumentParser
+from argparse import ArgumentParser, ArgumentTypeError
 import os
 
 from scripts import pdf, enter, serve, setup
+
+def validate(string):
+    value = os.path.realpath(string)
+    if not os.path.isdir(value):
+        msg = "'{}' does not exist, or is not a directory".format(string)
+        raise ArgumentTypeError(msg)
+    return value
 
 if __name__ == "__main__":
     parser = ArgumentParser(
@@ -17,7 +24,7 @@ if __name__ == "__main__":
     enter_parser.add_argument(
         'slides',
         metavar='PRES',
-        type=os.path.realpath,
+        type=validate,
         help='Presentation to mount inside Docker')
 
     pdf_parser = subparsers.add_parser(
@@ -27,7 +34,7 @@ if __name__ == "__main__":
     pdf_parser.add_argument(
         'slides',
         metavar='PRES',
-        type=os.path.realpath,
+        type=validate,
         help='Presentation to generate a PDF of')
 
     serve_parser = subparsers.add_parser(
@@ -37,7 +44,7 @@ if __name__ == "__main__":
     serve_parser.add_argument(
         'slides',
         metavar='PRES',
-        type=os.path.realpath,
+        type=validate,
         help='Presentation to serve')
 
     setup_parser = subparsers.add_parser(
