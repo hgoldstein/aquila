@@ -11,21 +11,21 @@ Automatically build and serve [reveal.js](https://github.com/hakimel/reveal.js/)
 ## Dependencies
 Aquila runs almost everything inside a docker container and uses bash and python
 scripts to launch docker. All you need to run Aquila is:
-* Bash
 * Python 3
 * Docker
 
 ## Usage
-* `serve path/to/presentation`: serves the presentation at `localhost:8000`. Probably the
-only command you'll need.
-* `pdf path/to/presentation`: exports the presentation as a PDF file named `index.pdf` in
-the directory with the presentation.
-* `setup`: builds the docker image. `server` builds the image as needed, so you shouldn't have
-to call this manually.
-* `enter path/to/presentation`: launches an interactive shell in the docker image with the
-specified presentation mounted. Used for debugging.
+Aquila provides the `aq` tool with the following commands:
+* `aq serve path/to/presentation`: serves the presentation at `localhost:8000`.
+  Probably the only command you'll need.
+* `aq pdf path/to/presentation`: exports the presentation as a PDF file named 
+  `index.pdf` in the directory with the presentation.
+* `aq setup`: builds the docker image. `server` builds the image as needed, so 
+  you shouldn't have to call this manually.
+* `aq enter path/to/presentation`: launches an interactive shell in the docker 
+  image with the specified presentation mounted. Used for debugging.
 
-All commands are in the [`bin`](bin) folder.
+All subcommands are also available in the [`scripts`](scripts) folder.
 
 ## Markdown Syntax
 ### Graphs
