@@ -16,36 +16,29 @@ if __name__ == "__main__":
     parser = ArgumentParser(
         description='Aquilia multi-tool')
 
+    slides_parser = ArgumentParser(add_help=False)
+    slides_parser.add_argument(
+            'slides', 
+            type=validate, 
+            metavar='PRES',
+            help='Directory containing presentation to operate on')
+
     subparsers = parser.add_subparsers(dest='subparser_name')
 
     enter_parser = subparsers.add_parser(
         'enter',
+        parents=[slides_parser],
         description='Enter the Docker image with a presentation')
-    enter_parser.add_argument(
-        'slides',
-        metavar='PRES',
-        type=validate,
-        help='Presentation to mount inside Docker')
 
     pdf_parser = subparsers.add_parser(
         'pdf',
+        parents=[slides_parser],
         description='Generate a PDF from a presentation')
-
-    pdf_parser.add_argument(
-        'slides',
-        metavar='PRES',
-        type=validate,
-        help='Presentation to generate a PDF of')
 
     serve_parser = subparsers.add_parser(
         'serve',
+        parents=[slides_parser],
         description='Serve a presentation')
-
-    serve_parser.add_argument(
-        'slides',
-        metavar='PRES',
-        type=validate,
-        help='Presentation to serve')
 
     setup_parser = subparsers.add_parser(
         'setup',
