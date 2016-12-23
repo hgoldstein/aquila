@@ -3,23 +3,25 @@
 import os
 import sys
 import subprocess as sp
-import setup
+
+import scripts.setup as setup
 
 
-def enter(slides):
-    setup.setup()
+def run(slides):
+    setup.run()
     cmd = []
     cmd += ['docker', 'run']
+    cmd += ['--env', 'SLIDES={}'.format(slides)]
     cmd += ['--privileged']
     cmd += ['-p', '8000:8000']
-    cmd += ['-p', '35729']
+    cmd += ['-p', '35729:35729']
     cmd += ['-it']
     cmd += ['--volume', "{}:/slides/".format(slides)]
-    cmd += ['aquilia']
+    cmd += ['aquilia', '/run']
     sp.call(cmd)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: enter <path to presentation>")
+        print("Usage: serve <path to presentation>")
         sys.exit(1)
-    enter(os.path.realpath(sys.argv[1]))
+    run(os.path.realpath(sys.argv[1]))

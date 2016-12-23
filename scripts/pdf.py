@@ -4,11 +4,11 @@ import os
 import sys
 import subprocess as sp
 
-import setup
+import scripts.setup as setup
 
 
-def pdf(slides):
-    setup.setup()
+def run(slides):
+    setup.run()
     cmd = []
     cmd += ['docker', 'run']
     cmd += ['--privileged']
@@ -20,7 +20,6 @@ def pdf(slides):
     child = sp.Popen(cmd, stdout=sp.PIPE)
     (out, _) = child.communicate()
     if len(out) == 0:
-        print("Failed to create PDF")
         return False
     with open(os.path.join(slides, 'index.pdf'), 'wb') as f:
         f.write(out)
@@ -30,5 +29,5 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: enter <path to presentation>")
         sys.exit(1)
-    success = pdf(os.path.realpath(sys.argv[1]))
+    success = run(os.path.realpath(sys.argv[1]))
     sys.exit(success)

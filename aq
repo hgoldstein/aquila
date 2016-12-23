@@ -1,0 +1,62 @@
+#! /usr/bin/env python3
+
+from argparse import ArgumentParser
+import os
+
+from scripts import pdf, enter, serve, setup
+
+if __name__ == "__main__":
+    parser = ArgumentParser(
+            description='Aquilia multi-tool')
+
+    subparsers = parser.add_subparsers(dest='subparser_name')
+
+    enter_parser = subparsers.add_parser(
+            'enter',
+            description='Enter the Docker image with a presentation')
+    enter_parser.add_argument(
+            'slides',
+            metavar='PRES',
+            type=os.path.realpath,
+            help='Presentation to mount inside Docker')
+
+    pdf_parser = subparsers.add_parser(
+            'pdf',
+            description='Generate a PDF from a presentation')
+
+    pdf_parser.add_argument(
+            'slides',
+            metavar='PRES',
+            type=os.path.realpath,
+            help='Presentation to generate a PDF of')
+
+    serve_parser = subparsers.add_parser(
+            'serve',
+            description='Serve a presentation')
+
+    serve_parser.add_argument(
+            'slides',
+            metavar='PRES',
+            type=os.path.realpath,
+            help='Presentation to serve')
+
+    setup_parser = subparsers.add_parser(
+            'setup',
+            description='Setup dependencies and build the Docker image')
+
+    args = parser.parse_args()
+
+    if args.subparser_name == 'enter':
+        enter.run(args.slides)
+    elif args.subparser_name == 'pdf':
+        success = pdf.run(args.slides)
+        sys.exit(success)
+    elif args.subparser_name == 'serve':
+        serve.run(args.slides)
+    elif args.subparser_name == 'setup':
+        setup.run()
+    else:
+        parser.print_help()
+        sys.exit(1)
+
+# vim;ft=python
