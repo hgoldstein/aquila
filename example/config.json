@@ -2,5 +2,5 @@
   "presentation" : "example presentation",
   "styles" : ["css/theme/cmr.css"],
   "title" : "title.md",
-  "slides" : ["graph.md", "math.md", "table.md", "code.md", "asciinema.md"]
+  "slides" : ["columns.md", "graph.md", "math.md", "table.md", "code.md", "asciinema.md"]
 }
