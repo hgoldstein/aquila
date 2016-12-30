@@ -22,8 +22,8 @@ index 9f1584b..14a809a 100644
 +      var columns = cap[1].trim();
 +      this.tokens.push({
 +        type: 'columns',
-+        columns: columns.split(/\n%\n/).map(function (s) {
-+          return s.replace('\\%\n', '%\n');
++        columns: columns.split(/\n%[^\n]*\n/).map(function (s) {
++          return s.replace('\\(%[^\n]*\n)', '$1');
 +        }),
 +      });
 +      continue;
