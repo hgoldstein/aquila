@@ -1,5 +1,5 @@
 diff --git a/lib/marked.js b/lib/marked.js
-index 9f1584b..886630b 100644
+index 9f1584b..5460c42 100644
 --- a/lib/marked.js
 +++ b/lib/marked.js
 @@ -23,8 +23,14 @@ var block = {
@@ -108,14 +108,3 @@ index 9f1584b..886630b 100644
      case 'html': {
        var html = !this.token.pre && !this.options.pedantic
          ? this.inline.output(this.token.text)
-@@ -1216,7 +1283,9 @@ function marked(src, opt, callback) {
-   }
-   try {
-     if (opt) opt = merge({}, marked.defaults, opt);
--    return Parser.parse(Lexer.lex(src, opt), opt);
-+    var tokens = Lexer.lex(src, opt);
-+    console.log(tokens);
-+    return Parser.parse(tokens, opt);
-   } catch (e) {
-     e.message += '\nPlease report this to https://github.com/chjj/marked.';
-     if ((opt || marked.defaults).silent) {
