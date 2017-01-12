@@ -51,6 +51,17 @@ RUN unzip *.zip
 RUN rm *.zip
 RUN mv MathJax* MathJax
 
+WORKDIR /
+RUN git clone https://github.com/chjj/marked
+WORKDIR /marked
+RUN git checkout 38f1727ffee0820975677027b8968bc1954e6637
+RUN npm install
+COPY marked.columns.patch .
+RUN ls lib
+RUN patch -p1 < marked.columns.patch
+RUN ./node_modules/gulp/bin/gulp.js
+RUN mv ./marked.min.js /reveal.js/plugin/markdown/marked.js
+
 WORKDIR /reveal.js
 RUN npm install grunt-exec --save-dev
 COPY Gruntfile.patch .
