@@ -18,11 +18,11 @@ scripts to launch docker. All you need to run Aquila is:
 Aquila provides the `aq` tool with the following commands:
 * `aq serve path/to/presentation`: serves the presentation at `localhost:8000`.
   Probably the only command you'll need.
-* `aq pdf path/to/presentation`: exports the presentation as a PDF file named 
+* `aq pdf path/to/presentation`: exports the presentation as a PDF file named
   `index.pdf` in the directory with the presentation.
-* `aq setup`: builds the docker image. `serve` builds the image as needed, so 
+* `aq setup`: builds the docker image. `serve` builds the image as needed, so
   you shouldn't have to call this manually.
-* `aq enter path/to/presentation`: launches an interactive shell in the docker 
+* `aq enter path/to/presentation`: launches an interactive shell in the docker
   image with the specified presentation mounted. Used for debugging.
 
 All subcommands are also available in the [`scripts`](scripts) folder.
@@ -52,6 +52,34 @@ Embed asciinema players with:
 <asciinema-player src="img/aquila-serve-demo.json" cols="80" rows="24" font-size="14px"></asciinema-player>
 ```
 
+### Columns
+Create columns in your slides with:
+```
+(|
+%
+Column 1
+* Content
+
+%
+Column 2
+* Content
+|)
+```
+* Each `%` delimits a column and can be annotated with a size like `% 1`. 
+  Size is relative to each column. For instance, the following:
+```
+(|
+% 3
+# Big
+
+% 1
+# Small
+|)
+```
+  Creates two columns where the first is three times as large as the second.
+* Make sure to have an empty line before each column separator (aside from 
+  the first separator).
+
 ## Example
 The [example](example) folder contains a working example presentation with Graphviz
 graphs and LaTeX equations! Run:
@@ -66,6 +94,7 @@ The example presentation has of three sections, each in a markdown file:
 1. `graph.md`
 1. `math.md`
 1. `table.md`
+1. `columns.md`
 
 It also has a title in the `title.md` file. The `config.json` file describes the
 presentation's structure:
