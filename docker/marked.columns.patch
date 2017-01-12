@@ -1,64 +1,121 @@
 diff --git a/lib/marked.js b/lib/marked.js
-index 9f1584b..14a809a 100644
+index 9f1584b..886630b 100644
 --- a/lib/marked.js
 +++ b/lib/marked.js
-@@ -24,7 +24,8 @@ var block = {
+@@ -23,8 +23,14 @@ var block = {
+   html: /^ *(?:comment *(?:\n|\s*$)|closed *(?:\n{2,}|\s*$)|closing *(?:\n{2,}|\s*$))/,
    def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +["(]([^\n]+)[")])? *(?:\n+|$)/,
    table: noop,
-   paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,
+-  paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,
 -  text: /^[^\n]+/
++  paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def|colbegin|colend|colsep))+)\n*/,
 +  text: /^[^\n]+/,
-+  columns: /^<\|((?:(?!\|>\n)(.*\n?)*))\|>/
++  column: {
++    whole: /^(?: *\(\|\n)((?:(?!colend)(?:.|\n))*)(?: *\|\))/,
++    begin: /^ *\(\|\n/,
++    sep: /^ *% *(\d*)/,
++    end: /^ *\|\)/
++  }
  };
  
  block.bullet = /(?:[*+-]|\d+\.)/;
-@@ -411,6 +412,20 @@ Lexer.prototype.token = function(src, top, bq) {
+@@ -62,6 +68,9 @@ block.paragraph = replace(block.paragraph)
+   ('blockquote', block.blockquote)
+   ('tag', '<' + block._tag)
+   ('def', block.def)
++  ('colsep', block.column.sep)
++  ('colbegin', block.column.begin)
++  ('colend', block.column.end)
+   ();
+ 
+ /**
+@@ -353,6 +362,25 @@ Lexer.prototype.token = function(src, top, bq) {
        continue;
      }
  
 +    // columns
-+    if (cap = this.rules.columns.exec(src)) {
++    if (cap = this.rules.column.whole.exec(src)) {
 +      src = src.substring(cap[0].length);
-+      var columns = cap[1].trim();
++      this.tokens.push({type: 'column.begin'});
++      this.token(cap[1], true, bq);
++      this.tokens.push({type: 'column.end'});
++      continue;
++    }
++
++    if (cap = this.rules.column.sep.exec(src)) {
++      src = src.substring(cap[0].length);
 +      this.tokens.push({
-+        type: 'columns',
-+        columns: columns.split(/\n%[^\n]*\n/).map(function (s) {
-+          return s.replace('\\(%[^\n]*\n)', '$1');
-+        }),
++        type: 'column.sep',
++        size: Number.parseInt(cap[1]) || 1
 +      });
 +      continue;
 +    }
 +
 +
-     // top-level paragraph
-     if (top && (cap = this.rules.paragraph.exec(src))) {
+     // html
+     if (cap = this.rules.html.exec(src)) {
        src = src.substring(cap[0].length);
-@@ -818,6 +833,16 @@ Renderer.prototype.listitem = function(text) {
-   return '<li>' + text + '</li>\n';
+@@ -900,6 +928,19 @@ Renderer.prototype.text = function(text) {
+   return text;
  };
  
-+Renderer.prototype.columns = function (cols) {
-+  var len = Math.floor(100 / cols.length);
-+  return '<div style="margin:0px auto; width:100%">'
-+    + cols.reduce(function (a, s) {
-+      return a + '<div style="float: left; margin:0px auto; width:' + len + '%">'
-+               + s
-+               + '</div>';
-+    }, '') + '</div>';
++Renderer.prototype.columns = function(body, sizes) {
++  var acc = '';
++  var len = body.length + sizes.length;
++  var sizes = (function () {
++    var sum = sizes.reduce(function (a,b) { return a + b; });
++    return sizes.map(function (a) { return (a / sum) * 100; });
++  })();
++  for (var i = 0; i < len; i++) {
++    acc += i % 2 === 0 ? body.shift() : sizes.shift();
++  }
++  return '<div style="width: 100%">' + acc + '</div>';
 +}
 +
- Renderer.prototype.paragraph = function(text) {
-   return '<p>' + text + '</p>\n';
- };
-@@ -1074,6 +1099,11 @@ Parser.prototype.tok = function() {
-     case 'paragraph': {
-       return this.renderer.paragraph(this.inline.output(this.token.text));
+ /**
+  * Parsing & Compiling
+  */
+@@ -1065,6 +1106,32 @@ Parser.prototype.tok = function() {
+ 
+       return this.renderer.listitem(body);
      }
-+    case 'columns': {
-+      return this.renderer.columns(
-+        this.token.columns.map(function (s) { return marked(s); })
-+      );
++    case 'column.begin': {
++      var body = [];
++      var sizes = [];
++      // Current segment that we are producing. Every time we need to insert
++      // a size (which we cannot know until the end) we add the segment to
++      // the body.
++      var seg = ''; 
++      var first_column = true;
++      while (this.next().type !== 'column.end') {
++        if (this.token.type === 'column.sep') {
++          if (!first_column) {
++            seg += '</div>'
++          }
++          first_column = false;
++          seg += '<div style="float: left;width: '
++          body.push(seg);
++          seg = '%">';
++          sizes.push(this.token.size);
++        } else {
++          seg += this.tok()
++        }
++      }
++      seg += '</div>'; // End the last column
++      body.push(seg);
++      return this.renderer.columns(body, sizes);
 +    }
-     case 'text': {
-       return this.renderer.paragraph(this.parseText());
-     }
+     case 'html': {
+       var html = !this.token.pre && !this.options.pedantic
+         ? this.inline.output(this.token.text)
+@@ -1216,7 +1283,9 @@ function marked(src, opt, callback) {
+   }
+   try {
+     if (opt) opt = merge({}, marked.defaults, opt);
+-    return Parser.parse(Lexer.lex(src, opt), opt);
++    var tokens = Lexer.lex(src, opt);
++    console.log(tokens);
++    return Parser.parse(tokens, opt);
+   } catch (e) {
+     e.message += '\nPlease report this to https://github.com/chjj/marked.';
+     if ((opt || marked.defaults).silent) {
