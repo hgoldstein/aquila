@@ -38,7 +38,7 @@ graph {
 </code></pre>
 
 
-See the Graphviz documentation for the synatax for making graphs:
+See the Graphviz documentation for the syntax for making graphs:
 * http://www.graphviz.org/doc/info/attrs.html
 * http://www.graphviz.org/doc/info/lang.html
 
@@ -66,7 +66,8 @@ Column 2
 |)
 ```
 * Each `%` delimits a column and can be annotated with a size like `% 1`. 
-  Size is relative to each column. For instance, the following:
+  Size is relative to each column. For instance, the example below creates 
+  two columns where the first is three times larger than the second.
 ```
 (|
 % 3
@@ -76,7 +77,6 @@ Column 2
 # Small
 |)
 ```
-  Creates two columns where the first is three times as large as the second.
 * Make sure to have an empty line before each column separator (aside from 
   the first separator).
 
@@ -103,7 +103,7 @@ presentation's structure:
   "presentation" : "example presentation",
   "styles" : ["css/theme/cmr.css"],
   "title" : "title.md",
-  "slides" : ["graph.md", "math.md", "table.md"]
+  "slides" : ["columns.md", "graph.md", "math.md", "table.md"]
 }
 ```
 Each field in `config.json` defines a part of the presentation:
