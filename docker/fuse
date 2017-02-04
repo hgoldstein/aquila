@@ -1,0 +1,4 @@
+#! /bin/bash
+
+cd / || (echo "Severe error" && exit)
+unionfs-fuse /slides:/reveal.js /pres

@@ -83,6 +83,10 @@ WORKDIR /
 COPY generate-index.py .
 RUN chmod +x generate-index.py
 COPY index.template /reveal.js
+COPY fuse .
+RUN chmod +x fuse
+COPY enter .
+RUN chmod +x enter
 COPY run .
 RUN chmod +x run
 COPY pdf .

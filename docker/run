@@ -1,9 +1,6 @@
 #! /bin/bash
 
-cd / || (echo "Severe error" && exit)
-
-unionfs-fuse /slides:/reveal.js /pres
-
+/fuse
 cd /pres || (echo "Severe error" && exit)
 npm start
 exit

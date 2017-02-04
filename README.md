@@ -65,8 +65,8 @@ Column 2
 * Content
 |)
 ```
-* Each `%` delimits a column and can be annotated with a size like `% 1`. 
-  Size is relative to each column. For instance, the example below creates 
+* Each `%` delimits a column and can be annotated with a size like `% 1`.
+  Size is relative to each column. For instance, the example below creates
   two columns where the first is three times larger than the second.
 ```
 (|
@@ -77,33 +77,28 @@ Column 2
 # Small
 |)
 ```
-* Make sure to have an empty line before each column separator (aside from 
+* Make sure to have an empty line before each column separator (aside from
   the first separator).
 
-## Example
+## Getting Started
 The [example](example) folder contains a working example presentation with Graphviz
 graphs and LaTeX equations! Run:
 ```bash
-$ bin/serve example
+$ git clone https://github.com/huntergoldstein/aquila.git
+$ cd aquila
+$ ./aq serve example
 ```
 Then, open [http://localhost:8000](http://localhost:8000) in a web browser to view
 the presentation.
 
-The example presentation has of three sections, each in a markdown file:
-
-1. `graph.md`
-1. `math.md`
-1. `table.md`
-1. `columns.md`
-
-It also has a title in the `title.md` file. The `config.json` file describes the
+The example presentation is composed of markdown files. The `config.json` file describes the
 presentation's structure:
 ```json
 {
   "presentation" : "example presentation",
   "styles" : ["css/theme/cmr.css"],
   "title" : "title.md",
-  "slides" : ["columns.md", "graph.md", "math.md", "table.md"]
+  "slides" : [ "columns.md", "graph.md", "math.md", "table.md", "code.md", "asciinema.md"]
 }
 ```
 Each field in `config.json` defines a part of the presentation:
@@ -114,8 +109,20 @@ uses `css/cmr/cmr.css` to change some of the default colors and font sizes.
 * `title`: the markdown file which contains the title slide.
 * `slides`: the rest of the markdown files in the order they should be displayed.
 
+## Controls
+* `s`: Spawns a presenter window which has a timer and the notes for each slide
+* `o`: Opens an overview of the presentation
+
 ## Screencast
 [![asciicast](https://asciinema.org/a/bcdmrv8e8xrcdjmmvxihe4p05.png)](https://asciinema.org/a/bcdmrv8e8xrcdjmmvxihe4p05)
 
+## Under the Hood
+Aqulia builds a docker image tagged `aqulia` with all the necessary software installed. Then, it overlays the presentation directory onto the standard files, and runs `reveal.js`. Running `aq enter <presentation>` will launch an interactive terminal inside the docker container with all the filesystems mounted, and the overlay setup. Assuming the presentation directory on the host system is `presentation`, the mounts are as follows:
+
+* `presentation -> /slides`
+* `/pres -> unionfs-fuse /slides:/reveal.js`
+
+Thus, Aqulia is fully customizable: simply place whatever files you want in the presentation directory, and in the union filesystem, they will take preference over any of Aqualia's default files. For example, if you don't like Aqualia's `index.html`, simply make your own, and it will be used instead!
+
 ## Contributing
-Coming soon!
+If you find any bug, or there is something you would like added, please make an issue! If you've fixed any bug and created any cool enhancements, open a pull request. We'll review it!
