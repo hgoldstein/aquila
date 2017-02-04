@@ -109,6 +109,10 @@ uses `css/cmr/cmr.css` to change some of the default colors and font sizes.
 * `title`: the markdown file which contains the title slide.
 * `slides`: the rest of the markdown files in the order they should be displayed.
 
+## Controls
+* `s`: Spawns a presenter window which has a timer and the notes for each slide
+* `o`: Opens an overview of the presentation
+
 ## Screencast
 [![asciicast](https://asciinema.org/a/bcdmrv8e8xrcdjmmvxihe4p05.png)](https://asciinema.org/a/bcdmrv8e8xrcdjmmvxihe4p05)
 
