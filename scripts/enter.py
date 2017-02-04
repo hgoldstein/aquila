@@ -15,7 +15,7 @@ def run(slides):
     cmd += ['-p', '35729']
     cmd += ['-it']
     cmd += ['--volume', "{}:/slides/".format(slides)]
-    cmd += ['aquilia']
+    cmd += ['aquilia', '/fuse']
     sp.call(cmd)
 
 if __name__ == "__main__":
