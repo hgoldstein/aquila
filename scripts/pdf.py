@@ -5,10 +5,11 @@ import sys
 import subprocess as sp
 
 import scripts.setup as setup
+from scripts.config import image_name
 
 
-def run(slides):
-    setup.run()
+def run(slides, local):
+    setup.run(local)
     cmd = []
     cmd += ['docker', 'run']
     cmd += ['--privileged']
@@ -16,7 +17,7 @@ def run(slides):
     # STDOUT
     cmd += ['-i']
     cmd += ['--volume', "{}:/slides/".format(slides)]
-    cmd += ['aquilia', '/pdf']
+    cmd += [image_name(), '/pdf']
     child = sp.Popen(cmd, stdout=sp.PIPE)
     (out, _) = child.communicate()
     if len(out) == 0:
@@ -29,5 +30,5 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: enter <path to presentation>")
         sys.exit(1)
-    success = run(os.path.realpath(sys.argv[1]))
+    success = run(os.path.realpath(sys.argv[1]), True)
     sys.exit(success)

@@ -4,10 +4,10 @@ import os
 import sys
 import subprocess as sp
 import scripts.setup as setup
+from scripts.config import image_name
 
-
-def run(slides):
-    setup.run()
+def run(slides, local):
+    setup.run(local)
     cmd = []
     cmd += ['docker', 'run']
     cmd += ['--privileged']
@@ -15,7 +15,7 @@ def run(slides):
     cmd += ['-p', '35729']
     cmd += ['-it']
     cmd += ['--volume', "{}:/slides/".format(slides)]
-    cmd += ['aquilia', '/enter']
+    cmd += [image_name(), '/enter']
     sp.call(cmd)
 
 if __name__ == "__main__":

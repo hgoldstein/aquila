@@ -7,8 +7,8 @@ import subprocess as sp
 import scripts.setup as setup
 
 
-def run(slides):
-    setup.run()
+def run(slides, local):
+    setup.run(local)
     cmd = []
     cmd += ['docker', 'run']
     cmd += ['--env', 'SLIDES={}'.format(slides)]
@@ -17,7 +17,7 @@ def run(slides):
     cmd += ['-p', '35729:35729']
     cmd += ['-it']
     cmd += ['--volume', "{}:/slides/".format(slides)]
-    cmd += ['aquilia', '/run']
+    cmd += [image_name(), '/run']
     sp.call(cmd)
 
 if __name__ == "__main__":
