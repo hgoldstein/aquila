@@ -3,7 +3,7 @@
 import os, sys
 from argparse import ArgumentParser, ArgumentTypeError
 
-from scripts import pdf, enter, serve, setup
+from scripts import pdf, enter, serve, setup, zipper
 
 def validate(string):
     value = os.path.realpath(string)
@@ -52,6 +52,11 @@ if __name__ == "__main__":
         parents=[local_parser],
         description='Setup dependencies and build the Docker image')
 
+    zip_parser = subparsers.add_parser(
+            'zip',
+            parents=[local_parser, slides_parser],
+            description='Zip up the current presentation for easy presenting')
+
     args = parser.parse_args()
 
     if args.subparser_name == 'enter':
@@ -63,6 +68,8 @@ if __name__ == "__main__":
         serve.run(args.slides, args.local)
     elif args.subparser_name == 'setup':
         setup.run(args.local)
+    elif args.subparser_name == 'zip':
+        success = zipper.run(args.slides, args.local)
     else:
         parser.print_help()
         sys.exit(1)
