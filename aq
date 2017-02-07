@@ -16,12 +16,6 @@ if __name__ == "__main__":
     parser = ArgumentParser(
         description='Aquilia multi-tool')
 
-    parser.add_argument(
-            '-l',
-            '--local',
-            action='store_true',
-            help="Build the docker image locally versus pulling from Docker Hub")
-
     slides_parser = ArgumentParser(add_help=False)
     slides_parser.add_argument(
             'slides', 
@@ -29,25 +23,33 @@ if __name__ == "__main__":
             metavar='PRES',
             help='Directory containing presentation to operate on')
 
+    local_parser = ArgumentParser(add_help=False)
+    local_parser.add_argument(
+            '-l',
+            '--local',
+            action='store_true',
+            help="Build the docker image locally versus pulling from Docker Hub")
+
     subparsers = parser.add_subparsers(dest='subparser_name')
 
     enter_parser = subparsers.add_parser(
         'enter',
-        parents=[slides_parser],
+        parents=[slides_parser, local_parser],
         description='Enter the Docker image with a presentation')
 
     pdf_parser = subparsers.add_parser(
         'pdf',
-        parents=[slides_parser],
+        parents=[slides_parser, local_parser],
         description='Generate a PDF from a presentation')
 
     serve_parser = subparsers.add_parser(
         'serve',
-        parents=[slides_parser],
+        parents=[slides_parser, local_parser],
         description='Serve a presentation')
 
     setup_parser = subparsers.add_parser(
         'setup',
+        parents=[local_parser],
         description='Setup dependencies and build the Docker image')
 
     args = parser.parse_args()
