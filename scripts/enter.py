@@ -6,6 +6,7 @@ import subprocess as sp
 import scripts.setup as setup
 from scripts.config import image_name
 
+
 def run(slides, local):
     setup.run(local)
     cmd = []
