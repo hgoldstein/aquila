@@ -12,7 +12,7 @@ def run(local=True):
     if local:
         sp.call(['docker', 'build', '-t', image_name(), DOCKER_PATH])
     else:
-        sp.call(['docker', 'pull', 'huntergoldstein/aquila'])
+        sp.call(['docker', 'pull', image_name()])
 
 if __name__ == "__main__":
     run()
