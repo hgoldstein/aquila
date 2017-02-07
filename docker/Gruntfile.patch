@@ -1,6 +1,17 @@
---- Gruntfile.js	2016-12-22 10:02:55.763233997 -0500
-+++ new.js	2016-12-22 10:02:00.083913992 -0500
-@@ -112,6 +112,10 @@
+diff --git a/Gruntfile.js b/Gruntfile.js
+index 87630d5..687d5cd 100644
+--- a/Gruntfile.js
++++ b/Gruntfile.js
+@@ -101,7 +101,7 @@ module.exports = function(grunt) {
+ 		},
+ 
+ 		zip: {
+-			'reveal-js-presentation.zip': [
++			'/reveal-js-presentation.zip': [
+ 				'index.html',
+ 				'css/**',
+ 				'js/**',
+@@ -112,6 +112,10 @@ module.exports = function(grunt) {
  			]
  		},
  
@@ -11,7 +22,7 @@
  		watch: {
  			js: {
  				files: [ 'Gruntfile.js', 'js/reveal.js' ],
-@@ -131,8 +135,15 @@
+@@ -131,8 +135,15 @@ module.exports = function(grunt) {
  			markdown: {
  				files: [ '*.md' ]
  			},
@@ -28,7 +39,7 @@
  			}
  		}
  
-@@ -148,6 +159,7 @@
+@@ -148,6 +159,7 @@ module.exports = function(grunt) {
  	grunt.loadNpmTasks( 'grunt-contrib-connect' );
  	grunt.loadNpmTasks( 'grunt-autoprefixer' );
  	grunt.loadNpmTasks( 'grunt-zip' );
@@ -36,7 +47,7 @@
  
  	// Default task
  	grunt.registerTask( 'default', [ 'css', 'js' ] );
-@@ -173,4 +185,6 @@
+@@ -173,4 +185,6 @@ module.exports = function(grunt) {
  	// Run tests
  	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
  

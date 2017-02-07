@@ -1,0 +1,14 @@
+#! /bin/bash
+
+FILENAME=/reveal-js-presentation.zip
+
+/fuse
+cd /pres
+$(npm bin)/grunt genindex 1>&2
+$(npm bin)/grunt zip --force 1>&2
+if [[ -f $FILENAME ]]; then
+	cat $FILENAME
+else
+	echo "Failed to ZIP presentation" 1>&2
+fi
+exit
